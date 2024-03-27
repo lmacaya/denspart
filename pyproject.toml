@@ -10,7 +10,7 @@ authors = [
 description = "DensPart performs Atoms-in-molecules density partitioning."
 readme = "README.rst"
 license = {file = "COPYING"}
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Console",
