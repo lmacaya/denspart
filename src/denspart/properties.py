@@ -137,7 +137,7 @@ def compute_multipole_moments(
     pro = pro_model.compute_density(grid, localgrids)
     result = np.zeros((pro_model.natom, (ellmax + 1) ** 2 - 1))
     radii = pro_model.get_cutoff_radii(density_cutoff)
-    for iatom, (atcoord, radius) in enumerate(zip(pro_model.atcoords, radii, strict=True)):
+    for iatom, (atcoord, radius) in enumerate(zip(pro_model.atcoords, radii)):
         localgrid = grid.get_localgrid(atcoord, radius)
         operators = np.zeros(((ellmax + 1) ** 2 - 1, localgrid.size))
         operators[:3] = (localgrid.points - atcoord)[:, [2, 0, 1]].T
