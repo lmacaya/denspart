@@ -161,7 +161,7 @@ class MBISProModel(ProModel):
         """
         fns = []
         nshell_map = {} if nshell_map is None else nshell_map
-        for iatom, (atnum, atcoord) in enumerate(zip(atnums, atcoords, strict=True)):
+        for iatom, (atnum, atcoord) in enumerate(zip(atnums, atcoords)):
             nshell = nshell_map.get(atnum)
             shells = INITIAL_MBIS_PARAMETERS[atnum]
             if nshell is not None:
