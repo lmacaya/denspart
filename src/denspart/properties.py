@@ -94,7 +94,7 @@ def compute_radial_moments(
     pro = pro_model.compute_density(grid, localgrids)
     result = np.zeros((pro_model.natom, nmax + 1))
     radii = pro_model.get_cutoff_radii(density_cutoff)
-    for iatom, (atcoord, radius) in enumerate(zip(pro_model.atcoords, radii, strict=True)):
+    for iatom, (atcoord, radius) in enumerate(zip(pro_model.atcoords, radii)):
         localgrid = grid.get_localgrid(atcoord, radius)
         pro_atom = pro_model.compute_proatom(iatom, localgrid.points, cache)
         ratio = safe_ratio(density[localgrid.indices], pro[localgrid.indices])
